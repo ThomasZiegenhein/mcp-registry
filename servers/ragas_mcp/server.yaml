@@ -1,0 +1,37 @@
+name: ragas_mcp
+image: mcp/ragas_mcp
+type: server
+meta:
+    category: ai
+    tags:
+        - ai
+about:
+    title: Ragas_mcp
+    description: ragas metrics accessible as mcp server
+    icon: https://github.com/ThomasZiegenhein/ragas_mcp/blob/main/mcp_ragas_logo_2.png
+source:
+    project: https://github.com/ThomasZiegenhein/ragas_mcp
+config:
+    description: Configure the connection to Ragas_mcp
+    secrets:
+        # API keys for LLM-as-a-Judge and embedding models we provide more but for simplicity we only show the OpenAI API key here, raise issue if you need more
+        - name: ragas_mcp.openai_api_key
+          env: OPENAI_API_KEY
+          example: your secret here
+    env:
+        # LLM-as-a-Judge provider selection
+        - name: LLM_MODEL
+          example: gpt-4o-mini
+          value: '{{ragas_mcp.llm_model}}'
+        - name: LLM_TEMPERATURE
+          example: 0.0
+          value: '{{ragas_mcp.llm_temperature}}'
+        - name: LLM_MAX_TOKENS
+          example: 1024
+          value: '{{ragas_mcp.llm_max_tokens}}'
+        - name: EMBEDDING_MODEL
+          example: text-embedding-3-small
+          value: '{{ragas_mcp.embedding_model}}'
+        - name: OPENAI_API_BASE
+          example: https://api.openai.com/v1
+          value: '{{ragas_mcp.openai_api_base}}'
