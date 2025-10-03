@@ -1,0 +1,15 @@
+name: docker-mcp-hello-word
+image: mcp/docker-mcp-hello-word
+type: server
+meta:
+  category: application
+  tags:
+    - testing
+about:
+  title: docker-mcp-hello-word
+  description: Template server
+  icon: https://avatars.githubusercontent.com/u/75258043?v=4
+source:
+  project: https://github.com/ThomasZiegenhein/docker-mcp-hello-word
+config:
+  description: No config needed

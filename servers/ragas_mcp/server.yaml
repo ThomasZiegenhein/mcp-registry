@@ -13,11 +13,11 @@ source:
     project: https://github.com/ThomasZiegenhein/ragas_mcp
 config:
     description: Configure the connection to Ragas_mcp
-    secrets:
-        # API keys for LLM-as-a-Judge and embedding models we provide more but for simplicity we only show the OpenAI API key here, raise issue if you need more
-        - name: ragas_mcp.openai_api_key
-          env: OPENAI_API_KEY
-          example: your secret here
+    #secrets:
+    #    # API keys for LLM-as-a-Judge and embedding models we provide more but for simplicity we only show the OpenAI API key here, raise issue if you need more
+    #    - name: ragas_mcp.openai_api_key
+    #      env: OPENAI_API_KEY
+    #      example: your secret here
     env:
         # LLM-as-a-Judge provider selection
         - name: LLM_MODEL
@@ -35,3 +35,6 @@ config:
         - name: OPENAI_API_BASE
           example: https://api.openai.com/v1
           value: '{{ragas_mcp.openai_api_base}}'
+        - name: OPENAI_API_KEY
+          example: your secret here
+          value: '{{ragas_mcp.openai_api_key}}'
